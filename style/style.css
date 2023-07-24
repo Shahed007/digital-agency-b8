@@ -5,8 +5,9 @@
 *::before,
 *::after,
 * {
+  margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,6 +20,14 @@ body {
   scroll-behavior: smooth;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* REUSABLE STYLE */
 .container {
   max-width: 125rem;
@@ -28,4 +37,145 @@ body {
 
 section {
   margin-top: 12rem;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  padding: 1.5rem 4rem;
+  color: transparent;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 5px;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #ff402d;
+  color: #ffff;
+  border: 2px solid transparent;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+.btn-primary:hover {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #ff402d;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #ff402d;
+  border: 2px solid transparent;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border: 2px solid #ff402d;
+  color: #fff;
+  background-color: transparent;
+}
+
+.flex {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* NAVBAR STYLING */
+nav {
+  background-color: #a0bfe0;
+  /* height: 10rem; */
+  padding: 1rem 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav .log {
+  cursor: pointer;
+}
+.main-nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav > ul li a:link,
+.main-nav > ul li a:visited {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 500;
+  transition: border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.main-nav > ul li a:hover,
+.main-nav > ul li a:active {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/* HERO SECTION STYLING */
+.hero-section {
+  height: calc(100vh - 65px);
+  background-image: url('../asset/image/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text-box {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+
+.hero-text-box h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.hero-text-box p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 70%;
+  margin: 0 auto 3rem auto;
+  color: #fff;
+}
+
+/* RESPONSIVE STYLING */
+@media screen and (max-width: 764px) {
+  html {
+    font-size: 53%;
+  }
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-text-box h1 {
+    font-size: 3rem;
+  }
+
+  .btn {
+    padding: 1.5rem 3rem;
+  }
 }
